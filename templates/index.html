@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stroke Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stroke Risk Prediction</h1>
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" step="0.1" name="age" id="age" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="hypertension">Hypertension:</label>
+            <select name="hypertension" id="hypertension" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="heart_disease">Heart Disease:</label>
+            <select name="heart_disease" id="heart_disease" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="ever_married">Ever Married:</label>
+            <select name="ever_married" id="ever_married" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="work_type">Work Type:</label>
+            <select name="work_type" id="work_type" required>
+                <option value="Private">Private</option>
+                <option value="Self-employed">Self-employed</option>
+                <option value="Govt_job">Government Job</option>
+                <option value="children">Children</option>
+                <option value="Never_worked">Never Worked</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="residence_type">Residence Type:</label>
+            <select name="residence_type" id="residence_type" required>
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="avg_glucose_level">Average Glucose Level:</label>
+            <input type="number" step="0.01" name="avg_glucose_level" id="avg_glucose_level" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="bmi">BMI:</label>
+            <input type="number" step="0.1" name="bmi" id="bmi" required>
+        </div>
+        
+        <button type="submit">Predict Stroke Risk</button>
+    </form>
+</body>
+</html>
